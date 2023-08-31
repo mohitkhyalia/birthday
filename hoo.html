@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="hoo.css">
+</head>
+<body> 
+    <div class="center" id="confettiCanvas">
+      
+        <div class="top-heading">
+            <div class="top-img"><h1 class="glow">Happy Birthday</h1></div>
+            <p class="p-t">Happy Birthday! <br> Wishing you a day as beautiful as your smile.</p>
+            <div class="down-arrow"></div>
+        </div>
+        <div class="bt">
+          <div class="bt-left">
+            <p class="p">Of course! Here's a birthday wish for the special girl:
+
+              "🎉🎂 Happy Birthday to an amazing and wonderful girl! 🎈🎁 May your day be filled with joy, laughter, and unforgettable moments. May this year bring you all the happiness and success you deserve. Keep shining bright and spreading your positive energy everywhere you go. Enjoy your day to the fullest! 🎉🎊"</p>
+          </div>
+          <div class="bt-img">
+            <img src="" alt="">
+          </div>
+        </div>
+        
+        <div class="box">
+            <div class="hcard">
+              <div class="imgBx">
+                  <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
+              </div>
+              <div class="details">
+                  <h2>SomeOne Famous<br><span>Director</span></h2>
+              </div>
+            </div>
+          
+             <div class="hcard">
+               <div class="imgBx">
+                  <img src="https://images.unsplash.com/photo-1549417229-aa67d3263c09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
+               </div>
+               <div class="details">
+                  <h2>SomeOne Famous<br><span>Producer</span></h2>
+                </div>
+             </div>
+      
+             <div class="hcard">
+               <div class="imgBx">
+                  <img src="https://images.unsplash.com/photo-1548094878-84ced0f6896d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
+               </div>
+               <div class="details">
+                  <h2>SomeOne Famous<br><span>Actor</span></h2>
+                </div>
+             </div>
+       
+        </div>
+    
+        <section class="new-line-section">
+            
+    
+    <div class="card-container">
+    
+     <div class="card" style="--image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/448976/berlin.jpg'); --angle: -5deg; --x: 5%; --y: 15%; --caption: 'Berlin in 2009'"></div>
+    
+     <div class="card" style="--image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/448976/london.jpg'); --angle: -1deg; --x: -10%; --y: -20%; --caption: 'London, 2001'"></div>
+    
+     <div class="card" style="--image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/448976/los-angeles.jpg'); --angle: -4deg; --x: -20%; --y: 5%; --caption: 'Los Angeles - 2004'"></div>
+    
+     <div class="card" style="--image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/448976/italy.jpg'); --angle: 7deg; --x: 10%; --y: -7%; --caption: 'Venice, 1999'"></div>
+    
+    </div>
+        </section>
+
+        <section>
+            <div class="scene">
+                <div class="tcard">
+                  <div class="card__face card__face--front">
+                    <img src="https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg" />
+                  </div>
+                  <div class="card__face card__face--back">
+                    <img src="https://i.loli.net/2019/11/16/cqyJiYlRwnTeHmj.jpg" />
+                  </div>
+                </div>
+                <div class="tcard">
+                  <div class="card__face card__face--front">
+                    <img src="https://i.loli.net/2019/11/16/FLnzi5Kq4tkRZSm.jpg" />
+                  </div>
+                  <div class="card__face card__face--back">
+                    <img src="https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg" />
+                  </div>
+                </div>
+                <div class="tcard">
+                  <div class="card__face card__face--front">
+                    <h2>when we first met</h2>
+                  </div>
+                  <div class="card__face card__face--back">
+                    <img src="https://i.loli.net/2019/11/03/RtVq2wxQYySDb8L.jpg" />
+                  </div>
+                </div>
+              </div>
+              
+        </section>
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+        confetti({
+  particleCount: 1000,
+  spread: 70,
+  origin: { y: 0.6 },
+});
+const duration = 15 * 1000,
+  animationEnd = Date.now() + duration,
+  defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+const interval = setInterval(function() {
+  const timeLeft = animationEnd - Date.now();
+
+  if (timeLeft <= 0) {
+    return clearInterval(interval);
+  }
+
+  const particleCount = 50 * (timeLeft / duration);
+
+  // since particles fall down, start a bit higher than random
+  confetti(
+    Object.assign({}, defaults, {
+      particleCount,
+      origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+    })
+  );
+  confetti(
+    Object.assign({}, defaults, {
+      particleCount,
+      origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+    })
+  );
+}, 250);
+
+
+
+let skew = 1;
+
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+(function frame() {
+  const timeLeft = animationEnd - Date.now(),
+    ticks = Math.max(200, 500 * (timeLeft / duration));
+
+  skew = Math.max(0.8, skew - 0.001);
+
+  confetti({
+    particleCount: 1,
+    startVelocity: 0,
+    ticks: ticks,
+    origin: {
+      x: Math.random(),
+      // since particles fall down, skew start toward the top
+      y: Math.random() * skew - 0.2,
+    },
+    colors: ["#ffffff"],
+    shapes: ["circle"],
+    gravity: randomInRange(0.4, 0.6),
+    scalar: randomInRange(0.4, 1),
+    drift: randomInRange(-0.4, 0.4),
+  });
+
+  if (timeLeft > 0) {
+    requestAnimationFrame(frame);
+  }
+})();
+
+const canvas = document.getElementById("confettiCanvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const durationt = 10000; // Set your desired animation duration here (10 seconds)
+
+
+    </script>
+</body>
+</html>
